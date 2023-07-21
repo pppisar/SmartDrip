@@ -1,0 +1,7 @@
+*.pdsbak
+*.workspace
+*.bin
+*.bm
+*.dbg
+*obj
+*.rpt
