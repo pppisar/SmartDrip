@@ -20,16 +20,14 @@ namespace NurseSms
       InitializeComponent();
       try
       {
-        port = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);//ініціалізуємо послідовний порт
+        port = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
         port.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
-        port.Open();//відкриваємо послідовний порт
-        port.NewLine = "\r";//встановлюємо символ перенесення строки
+        port.Open();
+        port.NewLine = "\r";
       }
       catch (Exception)
       {
-        button2.Enabled = false;
-        richTextBox1.Enabled = false;
-        MessageBox.Show("Порт не підключений");
+        button2.Enabled = richTextBox1.Enabled = false;
       }
     }
 
@@ -49,19 +47,9 @@ namespace NurseSms
 
     }
 
-    private void label1_Click(object sender, EventArgs e)
-    {
-
-    }
-
     private void button2_Click(object sender, EventArgs e)
     {
       richTextBox1.Clear();
-    }
-
-    private void Form1_Load(object sender, EventArgs e)
-    {
-
     }
   }
 }
